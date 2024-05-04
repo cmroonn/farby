@@ -1,0 +1,3 @@
+"use strict";
+
+$('#myImageCompare').imagesCompare({});
