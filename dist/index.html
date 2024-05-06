@@ -1163,11 +1163,11 @@
                     </h2>
 
                     <form class="request__content__form">
-                        <input type="text" placeholder="Как вас зовут?">
-                        <input type="text" placeholder="Ваш e-mail">
-                        <input type="text" placeholder="Номер телефона для связи">
+                        <input type="text" placeholder="Как вас зовут?" required name="name" class="required-field">
+                        <input type="email" placeholder="Ваш e-mail" required name="email" class="required-field">
+                        <input type="tel" placeholder="Номер телефона для связи" required name="phone" class="required-field">
 
-                        <button type="button">Отправить заявку</button>
+                        <button type="submit">Отправить заявку</button>
 
                         <span>Нажимая на кнопку «Отправить заявку»,<br>Вы соглашаетесь на обработку персональных данных</span>
                     </form>
@@ -1297,8 +1297,8 @@
             </p>
 
             <form>
-                <input type="text" name="name" placeholder="Введите ваше имя">
-                <input type="tel" name="tel" placeholder="Введите ваш телефон">
+                <input type="text" name="name" placeholder="Введите ваше имя" required class="required-field">
+                <input type="tel" name="phone" placeholder="Введите ваш телефон" required class="required-field">
                 <button class="btn welcome__offer__btn" type="button">
                     Перезвоните мне
                 </button>
@@ -1326,9 +1326,9 @@
             </p>
 
             <form>
-                <input type="text" name="name" placeholder="Введите ваше имя">
-                <input type="tel" name="tel" placeholder="Введите ваш телефон">
-                <button class="btn welcome__offer__btn" type="button">
+                <input type="text" name="name" placeholder="Введите ваше имя" required class="required-field">
+                <input type="tel" name="tel" placeholder="Введите ваш телефон" required class="required-field">
+                <button class="btn welcome__offer__btn" type="submit">
                     Перезвоните мне
                 </button>
 
@@ -1355,9 +1355,9 @@
             </p>
 
             <form>
-                <input type="text" name="name" placeholder="Введите ваше имя">
-                <input type="tel" name="tel" placeholder="Введите ваш телефон">
-                <button class="btn welcome__offer__btn" type="button">
+                <input type="text" name="name" placeholder="Введите ваше имя" required class="required-field">
+                <input type="tel" name="tel" placeholder="Введите ваш телефон" required class="required-field">
+                <button class="btn welcome__offer__btn" type="submit">
                     Перезвоните мне
                 </button>
 
@@ -1369,7 +1369,7 @@
         </div>
     </div>
 
-    <div class="popup" id="popupSmeta">
+    <div class="popup" id="popupSmeta" >
         <div class="popup__inner">
             <button type="button" class="popup__close">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1383,10 +1383,10 @@
                 Заполните поля, и получите<br>предварительный рассчет сметы проекта
             </p>
 
-            <form>
-                <input type="text" name="name" placeholder="Введите ваше имя">
-                <input type="tel" name="tel" placeholder="Введите ваш телефон">
-                <button class="btn welcome__offer__btn" type="button">
+            <form id="form-1" method="post">
+                <input type="text" name="name" placeholder="Введите ваше имя" required class="required-field">
+                <input type="tel" name="tel" placeholder="Введите ваш телефон" required class="required-field">
+                <button class="btn welcome__offer__btn" type="submit">
                     Получить рассчет
                 </button>
 
@@ -1413,9 +1413,9 @@
             </p>
 
             <form>
-                <input type="text" name="name" placeholder="Введите ваше имя">
-                <input type="tel" name="tel" placeholder="Введите ваш телефон">
-                <button class="btn welcome__offer__btn" type="button">
+                <input type="text" name="name" placeholder="Введите ваше имя" required class="required-field">
+                <input type="tel" name="tel" placeholder="Введите ваш телефон" required class="required-field">
+                <button class="btn welcome__offer__btn" type="submit">
                     Получить каталог
                 </button>
 
@@ -1431,10 +1431,74 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-images-compare@0.2.5/build/jquery.images-compare.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <script src="js/compare.js"></script>
+
+
+
+    <script>
+        $(".required form").validate({
+            rules: {
+                name: "required",
+                email: {
+                required: true,
+                email: true
+                }
+            },
+        });
+
+        $("#popupCalc form").validate({
+            rules: {
+                name: "required",
+                email: {
+                required: true,
+                email: true
+                }
+            },
+        });
+
+        $("#popupCall form").validate({
+            rules: {
+                name: "required",
+                email: {
+                required: true,
+                email: true
+                }
+            },
+        });
+
+        $("#popupConsult form").validate({
+            rules: {
+                name: "required",
+                email: {
+                required: true,
+                email: true
+                }
+            },
+        });
+
+        $("#popupSmeta form").validate({
+            rules: {
+                name: "required",
+                email: {
+                required: true,
+                email: true
+                }
+            },
+        });
+
+        $("#popupCatalog form").validate({
+            rules: {
+                name: "required",
+                email: {
+                required: true,
+                email: true
+                }
+            },
+        });
+    </script>
 </body>
 </html>

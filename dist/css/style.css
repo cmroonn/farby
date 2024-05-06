@@ -2056,3 +2056,11 @@ input::placeholder {
 .create__content .swiper-button-next {
   right: calc(100 / var(--screensize) * 100vw);
 }
+
+input.error {
+  border-color: #dd6161;
+}
+
+label.error {
+  display: none !important;
+}
