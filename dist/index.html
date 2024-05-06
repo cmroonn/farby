@@ -390,7 +390,7 @@
                                 Обсудите ваш проект с дизайнером Farby
                             </p>
 
-                            <button class="btn welcome__offer__btn" type="button">
+                            <button class="btn welcome__offer__btn open-popup-calc" type="button">
                                 Рассчитать проект
     
                                 <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -482,7 +482,7 @@
                                 Обсудите ваш проект с дизайнером Farby
                             </p>
 
-                            <button class="btn welcome__offer__btn" type="button">
+                            <button class="btn welcome__offer__btn open-popup-calc" type="button">
                                 Рассчитать проект
     
                                 <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -685,9 +685,54 @@
                 <h2 class="section-title" style="text-align: center;">
                     Создаем дизайн <span>с&nbsp;2012 года</span>
                 </h2>
+
+                <div class="create__content">
+                    <!-- Slider main container -->
+                    <div class="swiper create__slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="images/create-1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/create-1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/create-1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/create-1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/create-1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/create-1.jpg" alt="">
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev" id="prevCreate">
+                        <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="33" cy="33" r="32.5" stroke="#A85E3D"/>
+                            <path d="M29.6377 33.15C29.4754 33.15 29.3113 33.0874 29.1869 32.9603C28.938 32.706 28.938 32.2952 29.1869 32.0409L34.9136 26.1907C35.1625 25.9364 35.5645 25.9364 35.8134 26.1907C36.0622 26.445 36.0622 26.8558 35.8134 27.1101L30.0866 32.9603C29.9622 33.0874 29.7999 33.15 29.6377 33.15Z" fill="#A85E3D"/>
+                            <path d="M35.3608 39C35.1986 39 35.0345 38.9374 34.9101 38.8103L29.1866 32.96C28.9378 32.7058 28.9378 32.2949 29.1866 32.0407C29.4355 31.7864 29.8375 31.7864 30.0864 32.0407L35.8116 37.8909C36.0604 38.1452 36.0604 38.556 35.8116 38.8103C35.6872 38.9374 35.5249 39 35.3608 39H35.3608Z" fill="#A85E3D"/>
+                        </svg>                                
+                    </div>
+                    <div class="swiper-button-next" id="nextCreate">
+                        <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="33" cy="33" r="32.5" transform="matrix(-1 0 0 1 66 0)" stroke="#A85E3D"/>
+                            <path d="M36.3623 33.15C36.5246 33.15 36.6887 33.0874 36.8131 32.9603C37.062 32.706 37.062 32.2952 36.8131 32.0409L31.0864 26.1907C30.8375 25.9364 30.4355 25.9364 30.1866 26.1907C29.9378 26.445 29.9378 26.8558 30.1866 27.1101L35.9134 32.9603C36.0378 33.0874 36.2001 33.15 36.3623 33.15Z" fill="#A85E3D"/>
+                            <path d="M30.6392 39C30.8014 39 30.9655 38.9374 31.0899 38.8103L36.8134 32.96C37.0622 32.7058 37.0622 32.2949 36.8134 32.0407C36.5645 31.7864 36.1625 31.7864 35.9136 32.0407L30.1884 37.8909C29.9396 38.1452 29.9396 38.556 30.1884 38.8103C30.3128 38.9374 30.4751 39 30.6392 39H30.6392Z" fill="#A85E3D"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <img src="images/create.png" alt="" width="100%">
+            <img src="images/create.png" alt="" width="100%" class="create__desk">
         </section>
 
         <section class="download">
@@ -879,21 +924,53 @@
 
                 <div class="faq__content">
                     <div class="faq__buttons">
-                        <button type="button" class="active" data-id="1">
-                            У меня есть свой проект. Зачем мне дизайнер?
-                        </button>
+                        <div class="faq__btn active" data-id="1">
+                            <span>У меня есть свой проект. Зачем&nbsp;мне дизайнер?</span>
 
-                        <button type="button" data-id="2">
-                            Можно ли мне самостоятельно выбирать материалы?
-                        </button>
+                            <p>
+                                Дизайн-проект является основой для расчета бюджета.<br><br>
+                                При составлении документации наши дизайнеры со 100%-ой точностью учитывают финансовые возможности клиенты
+                                и его пожелания. <br><br>
+                                В проекте отражается не только отделка
+                                и расстановка мебели. В нем также продумано расположение инженерных коммуникаций, освещение и другие важные моменты
+                            </p>
+                        </div>
 
-                        <button type="button" data-id="3">
-                            Как более точно сделать расчёт стоимости?
-                        </button>
+                        <div class="faq__btn" data-id="2">
+                            <span>Можно ли мне самостоятельно выбирать материалы?</span>
 
-                        <button type="button" data-id="4">
-                            В периоде работы возможно ли повышение стоимости?
-                        </button>
+                            <p>
+                                Дизайн-проект является основой для расчета бюджета.<br><br>
+                                При составлении документации наши дизайнеры со 100%-ой точностью учитывают финансовые возможности клиенты
+                                и его пожелания. <br><br>
+                                В проекте отражается не только отделка
+                                и расстановка мебели. В нем также продумано расположение инженерных коммуникаций, освещение и другие важные моменты
+                            </p>
+                        </div>
+
+                        <div class="faq__btn" data-id="3">
+                            <span>Как более точно сделать расчёт стоимости?</span>
+
+                            <p>
+                                Дизайн-проект является основой для расчета бюджета.<br><br>
+                                При составлении документации наши дизайнеры со 100%-ой точностью учитывают финансовые возможности клиенты
+                                и его пожелания. <br><br>
+                                В проекте отражается не только отделка
+                                и расстановка мебели. В нем также продумано расположение инженерных коммуникаций, освещение и другие важные моменты
+                            </p>
+                        </div>
+
+                        <div class="faq__btn" data-id="4">
+                            <span>В периоде работы возможно ли повышение стоимости?</span>
+
+                            <p>
+                                Дизайн-проект является основой для расчета бюджета.<br><br>
+                                При составлении документации наши дизайнеры со 100%-ой точностью учитывают финансовые возможности клиенты
+                                и его пожелания. <br><br>
+                                В проекте отражается не только отделка
+                                и расстановка мебели. В нем также продумано расположение инженерных коммуникаций, освещение и другие важные моменты
+                            </p>
+                        </div>
                     </div>
 
                     <div class="faq__text-area">

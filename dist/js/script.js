@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  var swiperCreate = new Swiper('.create__slider', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // Navigation arrows
+    navigation: {
+      nextEl: '#nextCreate',
+      prevEl: '#prevCreate'
+    }
+  });
   var swiperMasters = new Swiper('.team__masters', {
     slidesPerView: 1,
     spaceBetween: 25,
@@ -30,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   {
-    var btns = document.querySelectorAll(".faq__buttons button");
+    var btns = document.querySelectorAll(".faq__btn");
     btns.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         console.log('a');
@@ -62,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   {
-    var _buttons = document.querySelectorAll(".faq__buttons button");
+    var _buttons = document.querySelectorAll(".faq__btn");
     var _items = document.querySelectorAll(".faq__text-area p");
     _buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {

@@ -870,6 +870,11 @@ input::placeholder {
   text-align: center;
   margin-bottom: calc(60 / var(--screensize) * 100vw);
 }
+@media (max-width: 500px) {
+  .team .section-title {
+    margin-bottom: calc(20 / var(--screensize) * 100vw);
+  }
+}
 
 .team-slider .swiper-slide {
   border: 1px solid #A85E3D;
@@ -887,6 +892,11 @@ input::placeholder {
   color: #1A1917;
   margin: calc(25 / var(--screensize) * 100vw) 0;
 }
+@media (max-width: 500px) {
+  .team-slider {
+    width: calc(250 / var(--screensize) * 100vw);
+  }
+}
 
 .team__content {
   margin-bottom: calc(80 / var(--screensize) * 100vw);
@@ -895,6 +905,21 @@ input::placeholder {
 .team__content h3 {
   text-align: center;
   font-size: calc(24 / var(--screensize) * 100vw);
+}
+@media (max-width: 500px) {
+  .team__content {
+    margin-bottom: calc(140 / var(--screensize) * 100vw);
+  }
+  .team__content .swiper-button-prev {
+    left: calc(100 / var(--screensize) * 100vw);
+    top: unset;
+    bottom: calc(-85 / var(--screensize) * 100vw);
+  }
+  .team__content .swiper-button-next {
+    right: calc(100 / var(--screensize) * 100vw);
+    top: unset;
+    bottom: calc(-85 / var(--screensize) * 100vw);
+  }
 }
 
 .faq__content {
@@ -909,7 +934,7 @@ input::placeholder {
   flex-shrink: 0;
   margin-right: calc(30 / var(--screensize) * 100vw);
 }
-.faq__buttons button {
+.faq__buttons .faq__btn {
   display: block;
   font-size: calc(16 / var(--screensize) * 100vw);
   background-color: #fff;
@@ -919,22 +944,65 @@ input::placeholder {
   border-radius: calc(20 / var(--screensize) * 100vw);
   text-align: left;
   margin-bottom: calc(10 / var(--screensize) * 100vw);
+  cursor: pointer;
 }
-.faq__buttons button.active {
+.faq__buttons .faq__btn.active {
   background-color: #FDF9F7;
   border-color: #F7E5DD;
 }
-.faq__buttons button:last-child {
+.faq__buttons .faq__btn:last-child {
   margin-bottom: 0;
+}
+.faq__buttons .faq__btn p {
+  display: none;
 }
 @media (max-width: 500px) {
   .faq__buttons {
     max-width: 100%;
   }
-  .faq__buttons button {
+  .faq__buttons .faq__btn {
     padding: calc(20 / var(--screensize) * 100vw);
     padding-right: calc(86 / var(--screensize) * 100vw);
     font-weight: 700;
+  }
+  .faq__buttons .faq__btn span {
+    position: relative;
+    display: block;
+  }
+  .faq__buttons .faq__btn span:after {
+    position: absolute;
+    content: "";
+    width: calc(30 / var(--screensize) * 100vw);
+    height: calc(30 / var(--screensize) * 100vw);
+    background-image: url("../images/faq-icon.svg");
+    background-size: cover;
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(45deg);
+    -ms-transform: translate(0, -50%) rotate(45deg);
+    transform: translate(0, -50%) rotate(45deg);
+    right: calc(-70 / var(--screensize) * 100vw);
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+  }
+  .faq__buttons .faq__btn p {
+    display: none;
+    font-size: calc(13 / var(--screensize) * 100vw);
+    padding-top: calc(20 / var(--screensize) * 100vw);
+    margin: 0;
+    font-weight: 400;
+    width: calc(320 / var(--screensize) * 100vw);
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    margin-top: calc(20 / var(--screensize) * 100vw);
+  }
+  .faq__buttons .faq__btn.active span:after {
+    -webkit-transform: translate(0, -50%) rotate(90deg);
+    -ms-transform: translate(0, -50%) rotate(90deg);
+    transform: translate(0, -50%) rotate(90deg);
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+  }
+  .faq__buttons .faq__btn.active p {
+    display: block;
   }
 }
 
@@ -1593,6 +1661,7 @@ input::placeholder {
     -ms-flex-direction: column;
     flex-direction: column;
     padding: calc(10 / var(--screensize) * 100vw);
+    margin-top: calc(10 / var(--screensize) * 100vw);
   }
 }
 
@@ -1817,6 +1886,11 @@ input::placeholder {
   border-radius: calc(20 / var(--screensize) * 100vw);
   margin-top: calc(56 / var(--screensize) * 100vw);
 }
+@media (max-width: 500px) {
+  .compare__wrapper {
+    margin-top: calc(30 / var(--screensize) * 100vw);
+  }
+}
 
 .images-compare-handle {
   border: none;
@@ -1825,6 +1899,11 @@ input::placeholder {
   height: calc(100 / var(--screensize) * 100vw);
   border-radius: calc(2 / var(--screensize) * 100vw);
   margin-left: calc(-4.5 / var(--screensize) * 100vw);
+}
+@media (max-width: 500px) {
+  .images-compare-handle {
+    margin-top: calc(-40 / var(--screensize) * 100vw);
+  }
 }
 
 .images-compare-right-arrow, .images-compare-left-arrow {
@@ -1926,6 +2005,11 @@ input::placeholder {
 .popup__inner span a {
   color: #252D4D;
 }
+@media (max-width: 500px) {
+  .popup__inner .btn {
+    width: calc(300 / var(--screensize) * 100vw);
+  }
+}
 
 .popup__close {
   position: absolute;
@@ -1935,4 +2019,40 @@ input::placeholder {
 .popup__close svg {
   width: calc(10 / var(--screensize) * 100vw);
   height: calc(10 / var(--screensize) * 100vw);
+}
+
+@media (max-width: 500px) {
+  .create__desk {
+    display: none;
+  }
+}
+.create__slider {
+  display: none;
+}
+.create__slider img {
+  width: 100%;
+  height: calc(240 / var(--screensize) * 100vw);
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: calc(20 / var(--screensize) * 100vw);
+}
+@media (max-width: 500px) {
+  .create__slider {
+    display: block;
+  }
+}
+
+.create__content {
+  position: relative;
+}
+.create__content .swiper-button-prev,
+.create__content .swiper-button-next {
+  bottom: calc(-75 / var(--screensize) * 100vw);
+  top: unset;
+}
+.create__content .swiper-button-prev {
+  left: calc(100 / var(--screensize) * 100vw);
+}
+.create__content .swiper-button-next {
+  right: calc(100 / var(--screensize) * 100vw);
 }
