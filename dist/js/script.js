@@ -117,4 +117,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  $('.phone-mask').mask("+9(999) 999-99-99");
 });
