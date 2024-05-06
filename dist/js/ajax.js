@@ -47,6 +47,20 @@ $(document).ready(function () {
       sendAjaxForm('result_form', 'form-3', '../mail/sender.php');
     }
   });
+  $("#form-4").submit(function (e) {
+    e.preventDefault();
+    var form = document.getElementById('form-4');
+    if (validate(form)) {
+      sendAjaxForm('result_form', 'form-4', '../mail/sender.php');
+    }
+  });
+  $("#form-5").submit(function (e) {
+    e.preventDefault();
+    var form = document.getElementById('form-5');
+    if (validate(form)) {
+      sendAjaxForm('result_form', 'form-5', '../mail/sender.php');
+    }
+  });
   function sendAjaxForm(result_form, ajax_form, url) {
     $.ajax({
       url: url,
