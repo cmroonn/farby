@@ -118,4 +118,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   $('.phone-mask').mask("+9(999) 999-99-99");
+  {
+    var popups = document.querySelectorAll(".popup");
+    popups.forEach(function (el) {
+      el.addEventListener("click", function (event) {
+        var target = event.target;
+        console.log(target, target.closest('.popup'));
+        if (target === el) {
+          el.classList.remove("active");
+        }
+      });
+    });
+  }
 });

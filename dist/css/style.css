@@ -46,7 +46,7 @@ a {
   transition: 0.3s ease;
 }
 .btn:hover {
-  opacity: 0.5;
+  background-color: #D38968;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
@@ -94,6 +94,7 @@ input::placeholder {
 .welcome {
   max-height: calc(877 / var(--screensize) * 100vw);
   background-image: url("../images/welcome-bg.jpg");
+  background-position: center bottom;
   background-size: cover;
   color: #fff;
   height: 100vh;
@@ -510,6 +511,10 @@ input::placeholder {
   text-align: center;
   font-size: calc(14 / var(--screensize) * 100vw);
   font-weight: 300;
+}
+.stages__item p a {
+  font-weight: 600;
+  color: #A85E3D;
 }
 @media (max-width: 500px) {
   .stages__item {
@@ -1424,6 +1429,8 @@ input::placeholder {
 @media (max-width: 500px) {
   .contact {
     padding-top: calc(20 / var(--screensize) * 100vw);
+    background-image: url("../images/contact-bg-mob.jpg");
+    padding-bottom: calc(213 / var(--screensize) * 100vw);
   }
 }
 
@@ -1496,6 +1503,9 @@ input::placeholder {
   padding: calc(20 / var(--screensize) * 100vw) 0;
 }
 
+.footer__row .header__logo img:last-child {
+  display: none;
+}
 .footer__row .header__contact__text p {
   color: #fff;
 }
@@ -1523,6 +1533,17 @@ input::placeholder {
   }
   .footer__row .header__order {
     margin-top: calc(30 / var(--screensize) * 100vw);
+  }
+  .footer__row .header__logo {
+    margin-bottom: calc(30 / var(--screensize) * 100vw);
+  }
+  .footer__row .header__logo img:last-child {
+    display: block;
+    width: calc(159 / var(--screensize) * 100vw);
+    height: calc(69 / var(--screensize) * 100vw);
+  }
+  .footer__row .header__logo img:first-child {
+    display: none;
   }
 }
 
@@ -1608,10 +1629,22 @@ input::placeholder {
   padding: 0;
   opacity: 0.4;
   font-weight: 500;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 .portfolio__nav button.active {
   opacity: 1;
   color: #A85E3D;
+}
+.portfolio__nav button.active:hover {
+  background: none;
+  border-color: #A85E3D;
+}
+.portfolio__nav button:hover {
+  border-color: rgba(168, 94, 61, 0.5);
+  background-color: rgba(168, 94, 61, 0.3);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 @media (max-width: 500px) {
   .portfolio__nav {
@@ -2063,4 +2096,8 @@ input.error {
 
 label.error {
   display: none !important;
+}
+
+.open-popup-call {
+  cursor: pointer;
 }
