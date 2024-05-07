@@ -39,6 +39,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   {
+    var swiperGallery1 = new Swiper('.popup__gallery__slider-1', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: '#gallery-next-1',
+        prevEl: '#gallery-prev-1'
+      }
+    });
+    var elements = document.querySelectorAll(".open-gallery");
+    elements.forEach(function (elem) {
+      elem.addEventListener("click", function () {
+        var imgId = elem.dataset.id;
+        var galleryId = elem.dataset.gallery;
+        var gallery = document.getElementById("popup-gallery-".concat(galleryId));
+        gallery.classList.add('active');
+        if (galleryId == 1) {
+          swiperGallery1.slideTo(imgId, 0, true);
+          console.log(swiperGallery1);
+        }
+      });
+    });
+  }
+  {
     var btns = document.querySelectorAll(".faq__btn");
     btns.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
@@ -92,9 +118,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var openPopup = function openPopup(elemsClass, popupId) {
       var elems = document.querySelectorAll(".".concat(elemsClass));
       var popup = document.getElementById(popupId);
+      var popups = document.querySelectorAll(".popup");
       elems.forEach(function (elem) {
         elem.addEventListener("click", function (e) {
           e.preventDefault();
+          popups.forEach(function (popup) {
+            popup.classList.remove("active");
+          });
           popup.classList.add("active");
         });
       });
@@ -167,5 +197,8 @@ document.addEventListener("DOMContentLoaded", function () {
         _nextEl.classList.add("active");
       }
     });
+  }
+  if (window.innerWidth <= 500) {
+    document.querySelector(".faq__btn.active").classList.remove("active");
   }
 });
