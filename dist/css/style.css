@@ -181,9 +181,14 @@ input::placeholder {
 .header__contact a:last-child {
   margin-right: 0;
 }
-.header__contact a img {
+.header__contact a img, .header__contact a svg {
   width: calc(44 / var(--screensize) * 100vw);
   height: calc(44 / var(--screensize) * 100vw);
+}
+.header__contact a:hover svg rect {
+  fill: rgba(217, 217, 217, 0.2);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .header__order {
@@ -1066,10 +1071,20 @@ input::placeholder {
 .faq__text-area p {
   margin: 0;
   color: #1A1917;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  display: block;
+  position: absolute;
 }
 .faq__text-area p.active {
   display: block;
+  position: static;
+  opacity: 1;
+  -webkit-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+  visibility: visible;
 }
 @media (max-width: 500px) {
   .faq__text-area {
@@ -1739,19 +1754,25 @@ input::placeholder {
   background-color: #F2F2F2;
   border-radius: calc(20 / var(--screensize) * 100vw);
   margin-top: calc(30 / var(--screensize) * 100vw);
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: calc(50 / var(--screensize) * 100vw) calc(30 / var(--screensize) * 100vw) calc(20 / var(--screensize) * 100vw) calc(60 / var(--screensize) * 100vw);
   opacity: 0;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
+  -webkit-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+  visibility: hidden;
+  position: absolute;
 }
 .portfolio__body.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   opacity: 1;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
+  -webkit-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
+  position: static;
+  visibility: visible;
 }
 @media (max-width: 500px) {
   .portfolio__body {
