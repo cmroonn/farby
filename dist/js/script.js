@@ -130,4 +130,42 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+  {
+    var arrowNext = document.querySelector(".portfolio__next");
+    var arrowPrev = document.querySelector(".portfolio__prev");
+    var elemsCount = document.querySelectorAll(".portfolio__body").length;
+    console.log(elemsCount);
+    arrowNext.addEventListener("click", function () {
+      var activeEl = document.querySelector(".portfolio__body.active");
+      var currentId = Number(activeEl.dataset.id);
+      document.querySelector(".portfolio__nav button[data-id=\"".concat(currentId, "\"]")).classList.remove("active");
+      if (elemsCount === currentId) {
+        currentId = 0;
+      }
+      var nextEl = document.querySelector(".portfolio__body[data-id=\"".concat(currentId + 1, "\"]"));
+      console.log(nextEl);
+      activeEl.classList.remove("active");
+      document.querySelector(".portfolio__nav button[data-id=\"".concat(currentId + 1, "\"]")).classList.add("active");
+      nextEl.classList.add("active");
+    });
+    arrowPrev.addEventListener("click", function () {
+      var activeEl = document.querySelector(".portfolio__body.active");
+      var currentId = Number(activeEl.dataset.id);
+      document.querySelector(".portfolio__nav button[data-id=\"".concat(currentId, "\"]")).classList.remove("active");
+      if (1 === currentId) {
+        currentId = elemsCount;
+        var nextEl = document.querySelector(".portfolio__body[data-id=\"".concat(currentId, "\"]"));
+        console.log(nextEl);
+        activeEl.classList.remove("active");
+        document.querySelector(".portfolio__nav button[data-id=\"".concat(currentId, "\"]")).classList.add("active");
+        nextEl.classList.add("active");
+      } else {
+        var _nextEl = document.querySelector(".portfolio__body[data-id=\"".concat(currentId - 1, "\"]"));
+        console.log(_nextEl);
+        activeEl.classList.remove("active");
+        document.querySelector(".portfolio__nav button[data-id=\"".concat(currentId - 1, "\"]")).classList.add("active");
+        _nextEl.classList.add("active");
+      }
+    });
+  }
 });

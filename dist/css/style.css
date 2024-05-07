@@ -1381,6 +1381,7 @@ input::placeholder {
   font-size: calc(14 / var(--screensize) * 100vw);
   width: 100%;
   margin-bottom: calc(30 / var(--screensize) * 100vw);
+  color: #fff;
 }
 .request__content__form input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
@@ -2131,4 +2132,40 @@ label.error {
   margin-right: auto;
   margin-top: calc(-39 / var(--screensize) * 100vw);
   margin-bottom: calc(-15 / var(--screensize) * 100vw);
+}
+
+.portfolio__next {
+  position: absolute;
+  right: -90px;
+  bottom: calc(200 / var(--screensize) * 100vw);
+}
+.portfolio__next svg {
+  width: calc(61 / var(--screensize) * 100vw);
+  height: calc(61 / var(--screensize) * 100vw);
+}
+@media (max-width: 500px) {
+  .portfolio__next {
+    right: calc(130 / var(--screensize) * 100vw);
+    bottom: calc(-85 / var(--screensize) * 100vw);
+  }
+}
+
+.portfolio__prev {
+  position: absolute;
+  left: -90px;
+  bottom: calc(200 / var(--screensize) * 100vw);
+}
+.portfolio__prev svg {
+  width: calc(61 / var(--screensize) * 100vw);
+  height: calc(61 / var(--screensize) * 100vw);
+}
+@media (max-width: 500px) {
+  .portfolio__prev {
+    left: calc(130 / var(--screensize) * 100vw);
+    bottom: calc(-85 / var(--screensize) * 100vw);
+  }
+}
+
+.portfolio .container {
+  position: relative;
 }
