@@ -70,10 +70,17 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.addEventListener("click", function (e) {
         console.log('a');
         if (!btn.classList.contains("active")) {
+          console.log('add');
           btns.forEach(function (btn2) {
             return btn2.classList.remove("active");
           });
           btn.classList.add("active");
+        } else {
+          console.log('aa');
+          if (window.innerWidth <= 500) {
+            console.log('remove');
+            btn.classList.remove("active");
+          }
         }
       });
     });
@@ -97,22 +104,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   {
-    var _buttons = document.querySelectorAll(".faq__btn");
-    var _items = document.querySelectorAll(".faq__text-area p");
-    _buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        _items.forEach(function (item) {
-          item.classList.remove("active");
-          if (item.dataset.id === btn.dataset.id) {
-            _buttons.forEach(function (btn2) {
-              return btn2.classList.remove("active");
-            });
-            item.classList.add("active");
-            btn.classList.add("active");
-          }
+    if (window.innerWidth > 500) {
+      var _buttons = document.querySelectorAll(".faq__btn");
+      var _items = document.querySelectorAll(".faq__text-area p");
+      _buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          _items.forEach(function (item) {
+            item.classList.remove("active");
+            if (item.dataset.id === btn.dataset.id) {
+              _buttons.forEach(function (btn2) {
+                return btn2.classList.remove("active");
+              });
+              item.classList.add("active");
+              btn.classList.add("active");
+            }
+          });
         });
       });
-    });
+    }
   }
   {
     var openPopup = function openPopup(elemsClass, popupId) {
