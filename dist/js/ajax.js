@@ -73,11 +73,12 @@ $(document).ready(function () {
       // Сеарилизуем объект
       success: function success(response) {
         //Данные отправлены успешно
-        alert('asd');
+        document.getElementById(ajax_form).closest('.popup').classList.remove("active");
+        document.getElementById('thankyou').classList.add("active");
       },
       error: function error(response) {
         // Данные не отправлены
-        $('#result_form').html('Ошибка. Данные не отправлены.');
+        alert('Ошибка. Данные не отправлены.');
       }
     });
   }

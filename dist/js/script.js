@@ -48,6 +48,25 @@ document.addEventListener("DOMContentLoaded", function () {
       navigation: {
         nextEl: '#gallery-next-1',
         prevEl: '#gallery-prev-1'
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false
+      }
+    });
+    var swiperGallery2 = new Swiper('.popup__gallery__slider-2', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: '#gallery-next-2',
+        prevEl: '#gallery-prev-2'
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false
       }
     });
     var elements = document.querySelectorAll(".open-gallery");
@@ -156,7 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  $('.phone-mask').mask("+9(999) 999-99-99");
+
+  // $('.phone-mask').mask("+9(999) 999-99-99");
+
   {
     var popups = document.querySelectorAll(".popup");
     popups.forEach(function (el) {
@@ -209,5 +230,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (window.innerWidth <= 500) {
     document.querySelector(".faq__btn.active").classList.remove("active");
+  }
+  {
+    var btn = document.getElementById('popupThanksClose');
+    var popup = document.getElementById('thankyou');
+    btn.addEventListener("click", function () {
+      popup.classList.remove("active");
+    });
+  }
+  {
+    var element = document.querySelectorAll('.phone-mask');
+    var maskOptions = {
+      mask: '+{7}(000)000-00-00'
+    };
+    element.forEach(function (el) {
+      IMask(el, maskOptions);
+    });
   }
 });

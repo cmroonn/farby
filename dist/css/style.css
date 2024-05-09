@@ -10,10 +10,19 @@
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-only {
-  display: none;
+  display: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  box-shadow: 0 0 0 30px transparent inset !important;
 }
 
 @media (max-width: 500px) {
@@ -21,10 +30,15 @@
     overflow-x: hidden;
   }
   .desktop-only {
-    display: none;
+    display: none !important;
   }
   .mobile-only {
-    display: block;
+    display: block !important;
+  }
+  .mobile-only.master-class__buttons__btn {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
 }
 body {
@@ -54,7 +68,7 @@ a {
 button {
   padding: 0;
   margin: 0;
-  outline: none;
+  outline: none !important;
   border: none;
   background: none;
   cursor: pointer;
@@ -63,7 +77,7 @@ button {
 
 input {
   font-family: "Manrope", sans-serif;
-  outline: none;
+  outline: none !important;
 }
 input::-webkit-input-placeholder {
   font-family: "Manrope", sans-serif;
@@ -127,10 +141,12 @@ input::placeholder {
 
 @media (max-width: 500px) {
   .welcome .header .header__order {
-    font-size: calc(7 / var(--screensize) * 100vw);
+    font-size: calc(6 / var(--screensize) * 100vw);
     width: calc(90 / var(--screensize) * 100vw);
     height: calc(20 / var(--screensize) * 100vw);
     display: block;
+    font-weight: 400;
+    margin-top: calc(-3 / var(--screensize) * 100vw);
   }
 }
 
@@ -550,6 +566,9 @@ input::placeholder {
   font-weight: 600;
   color: #A85E3D;
 }
+.stages__item p a:hover {
+  text-decoration: underline;
+}
 @media (max-width: 500px) {
   .stages__item {
     width: calc(262 / var(--screensize) * 100vw);
@@ -967,6 +986,9 @@ input::placeholder {
   .team__content {
     margin-bottom: calc(140 / var(--screensize) * 100vw);
   }
+  .team__content h3 {
+    font-weight: 500;
+  }
   .team__content .swiper-button-prev {
     left: calc(100 / var(--screensize) * 100vw);
     top: unset;
@@ -1119,6 +1141,7 @@ input::placeholder {
     width: calc(360 / var(--screensize) * 100vw);
     margin: calc(100 / var(--screensize) * 100vw) auto;
     padding-top: calc(20 / var(--screensize) * 100vw);
+    padding-bottom: calc(40 / var(--screensize) * 100vw);
   }
 }
 
@@ -1378,6 +1401,9 @@ input::placeholder {
   }
 }
 
+.only .section-title {
+  line-height: 105%;
+}
 @media (max-width: 500px) {
   .only .section-title {
     font-size: calc(28 / var(--screensize) * 100vw);
@@ -1683,6 +1709,9 @@ input::placeholder {
   }
 }
 
+.portfolio {
+  margin-bottom: calc(100 / var(--screensize) * 100vw);
+}
 .portfolio .section-title {
   margin-bottom: 0;
   text-align: center;
@@ -2085,9 +2114,8 @@ input::placeholder {
   justify-content: center;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-  z-index: -1;
+  -webkit-transition: opacity 0.3s ease, visibility 1s ease;
+  transition: opacity 0.3s ease, visibility 1s ease;
   -webkit-backdrop-filter: blur(3.2px);
   backdrop-filter: blur(3.2px);
 }
@@ -2095,8 +2123,8 @@ input::placeholder {
   z-index: 3;
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease, z-index 1s step-start;
+  transition: opacity 0.3s ease, z-index 1s step-start;
 }
 
 .popup__inner {
@@ -2189,12 +2217,19 @@ input::placeholder {
 .create__content .swiper-button-next {
   bottom: calc(-75 / var(--screensize) * 100vw);
   top: unset;
+  display: none;
 }
 .create__content .swiper-button-prev {
   left: calc(100 / var(--screensize) * 100vw);
 }
 .create__content .swiper-button-next {
   right: calc(100 / var(--screensize) * 100vw);
+}
+@media (max-width: 500px) {
+  .create__content .swiper-button-prev,
+  .create__content .swiper-button-next {
+    display: block;
+  }
 }
 
 input.error {
@@ -2392,4 +2427,19 @@ a.contacts__race {
 
 .gallery-next {
   right: calc(210 / var(--screensize) * 100vw);
+}
+
+.compare {
+  display: none;
+}
+
+.popup__thanks__close {
+  margin-top: calc(20 / var(--screensize) * 100vw);
+  letter-spacing: 0.1em;
+}
+@media (max-width: 500px) {
+  .popup__thanks__close {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
